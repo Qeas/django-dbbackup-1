@@ -3,7 +3,7 @@ S3 Storage object.
 """
 import os
 import tempfile
-from cStringIO import StringIO
+from cStringIO import BytesIO
 
 import boto
 from boto.s3.key import Key
@@ -85,7 +85,7 @@ class Storage(BaseStorage):
                 if not buffer:
                     break
                 else:
-                    string_file = StringIO(buffer)
+                    string_file = BytesIO(buffer)
                     try:
                         string_file.seek(0)
                         mp.upload_part_from_file(string_file, part_index)
