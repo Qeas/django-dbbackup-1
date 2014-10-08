@@ -3,7 +3,7 @@ S3 Storage object.
 """
 import os
 import tempfile
-from cStringIO import BytesIO
+from io import BytesIO
 
 import boto
 from boto.s3.key import Key
